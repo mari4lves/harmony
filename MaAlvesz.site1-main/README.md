@@ -44,3 +44,4 @@ Neste repositório está implementado o sistema Harmony, um site para ouvir musi
 
 ### Como executar o sirvidor
 1. Clique com o botão direito no arquivo "app.py" e selecione "Executar o arquivo Python no terminal"
+2. verifique a versão do git 3.8

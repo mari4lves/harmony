@@ -1,7 +1,8 @@
 # Importanto a biblioteca do flask para fazer um site dinamico
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
+app.secret_key = "chave"
 
 # Criar uma lista e usuarios e senha, depois vamos pegar no BD
 usuarios ={
@@ -50,10 +51,13 @@ def verificar_login():
     #Verificar se o usuario digitado esta na lista e se
     #a senha está certa
     if username in usuarios and usuarios[username] == password:
-        return f"Bem-vindo, {username}!"
+        return redirect(url_for('inicio'))
     else:
-        return "Usuário ou senha inválidos."
+        #Flash envia mensagem para o front-end
+        flash('Usuário ou senha incorretos', 'danger')
+        return redirect(url_for('login'))
     
+
 
 # Parte principal do programa em Python
 if __name__=='__main__':

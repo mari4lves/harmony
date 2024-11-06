@@ -12,7 +12,7 @@
 </head>
 <body class="login">
     <div class="caixa-de-login">
-        <from action="/verificar-login" method="POST"> 
+        <form action="/verificar-login" method="POST"> 
             <h2> Login</h2>   
             <p>Usuário</p>
             <!--Adiciona ENTRADA DE TEXTO-->
@@ -26,11 +26,23 @@
             <a href="/esqueci">Esqueci a senha</a>
             <br>
             <br>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class= 'resposta'>
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+            {% block body %}{% endblock %}
+
             <div class="botoes">
                 <button type="submit" >Entrar</button>
             </div>
 
-        </from>
+        </form>
     </div>
 
     
