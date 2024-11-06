@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <!--Criar link HTML e CSS-->
+    <link rel="stylesheet" href="static/estilo.css">
+    <!--Adicionar o icone (favicon) do site-->
+    <link rel="shortcut icon" href="static/estilo.css">
+
+</head>
+<body class="login">
+    <div class="caixa-de-login">
+        <from action="/verificar-login" method="POST"> 
+            <h2> Login</h2>   
+            <p>Usuário</p>
+            <!--Adiciona ENTRADA DE TEXTO-->
+            <input type='text' id='username' name='username' placeholder="Digite seu Usuário"> 
+            
+            <p>Senha</p>
+            <!--Adiciona ENTRADA DE SENHA-->
+            <input type='password' id='password' name="password" placeholder="Digite sua senha">
+            <br>
+            <br>
+            <a href="/esqueci">Esqueci a senha</a>
+            <br>
+            <br>
+            <div class="botoes">
+                <button type="submit" >Entrar</button>
+            </div>
+
+        </from>
+    </div>
+
+    
+</body>
+</html>
