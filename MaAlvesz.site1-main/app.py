@@ -1,8 +1,16 @@
+import sqlite3
 # Importanto a biblioteca do flask para fazer um site dinamico
 from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
-app.secret_key = "chave"
+app.secret_key = "chave"  # Necessaria para mensagens flash
+
+# Função para conectar ao banco de dados
+def get_db_connection():
+    conn = sqlite3.connetc('meu_banco.db')
+    conn.row_factory = sqlite3.Row
+    # Facilita acessar as colunas pelo nome
+    return conn
 
 # Criar uma lista e usuarios e senha, depois vamos pegar no BD
 usuarios ={
